@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Explorer AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+
+
+        <h1>Place Explorer AI</h1>
+
+        <p>
+            Discover real places around the world with AI.
+            Explore history, hidden gems, famous landmarks, mysteries,
+            cultures and breathtaking destinations.
+        </p>
+
+    </div>
+
+    <!-- Chat Area -->
+
+    <div class="chat-box" id="chatBox">
+
+        <div class="message bot">
+            <span>
+    Welcome to <b>Place Explorer AI</b>
+
+    Ask me anything like:
+
+        Top 5 Haunted Places in India
+
+        Hidden Beaches in Thailand
+
+        Best Trekking Places in Himachal Pradesh
+
+        Historical Monuments in Delhi
+
+        Active Volcanoes in the World
+
+        Best Places for Stargazing
+            </span>
+        </div>
+
+    </div>
+
+    <!-- Input -->
+
+    <div class="input-area">
+
+        <input
+            type="text"
+            id="userInput"
+            placeholder="Ask about any place on Earth..."
+        >
+
+        <button onclick="sendMessage()">
+            <i class="fa-solid fa-paper-plane"></i>
+            Explore
+        </button>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
