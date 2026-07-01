@@ -6,79 +6,73 @@
     <title>Place Explorer AI</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 
 <body>
 
 <div class="container">
-
-    <!-- Header -->
-    <div class="header">
-
-
-        <h1>Place Explorer AI</h1>
-
-        <p>
-            Discover real places around the world with AI.
-            Explore history, hidden gems, famous landmarks, mysteries,
-            cultures and breathtaking destinations.
-        </p>
-
-    </div>
-
-    <!-- Chat Area -->
-
-    <div class="chat-box" id="chatBox">
-
-        <div class="message bot">
-            <span>
-    Welcome to <b>Place Explorer AI</b>
-
-    Ask me anything like:
-
-        Top 5 Haunted Places in India
-
-        Hidden Beaches in Thailand
-
-        Best Trekking Places in Himachal Pradesh
-
-        Historical Monuments in Delhi
-
-        Active Volcanoes in the World
-
-        Best Places for Stargazing
-            </span>
-        </div>
-
-    </div>
-
-    <!-- Input -->
-
-    <div class="input-area">
-
-        <input
-            type="text"
-            id="userInput"
-            placeholder="Ask about any place on Earth..."
-        >
-
-        <button onclick="sendMessage()">
-            <i class="fa-solid fa-paper-plane"></i>
-            Explore
+    <div class="sidebar">
+        <h2>🌍 Explorer</h2>
+        <button class="menu-btn active" onclick="showChat()">
+            <i class="fa-solid fa-comments"></i>
+            Chat
         </button>
-
+        <button class="menu-btn" onclick="showFavorites()">
+            <i class="fa-solid fa-heart"></i>
+            Favorites
+        </button>
     </div>
+    <div class="main-content">
+        <div class="header">
+            <h1>Place Explorer AI</h1>
+            <p>
+                Discover real places around the world.
+            </p>
+        </div>
+        <div id="chatSection">
+            <div class="chat-box" id="chatBox">
+                <div class="message bot">
+                    <span>
+👋 Welcome to <b>Place Explorer AI</b>
 
+Ask me anything like:
+
+🏰 Top 5 Haunted Places in India
+
+🏔 Beautiful Mountains
+
+🏝 Hidden Beaches
+
+🕌 Historical Monuments
+
+🌋 Volcanoes
+                    </span>
+                </div>
+            </div>
+            <div class="input-area">
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Ask about any place..."
+                >
+                <button onclick="sendMessage()">
+                    Explore
+                </button>
+            </div>
+        </div>
+        <div id="favoritesSection" style="display:none;">
+            <div class="favorites-title">
+                My Favorite Places
+            </div>
+            <div id="favoritesList">
+            </div>
+        </div>
+    </div>
 </div>
-
 <script src="{{ url_for('static', filename='script.js') }}"></script>
-
 </body>
 </html>
